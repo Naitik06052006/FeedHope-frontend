@@ -83,11 +83,11 @@ export default function AdminRequests() {
                 : filtered.map((r) => (
                   <tr key={r._id}>
                     <td>
-                      <p className="font-medium text-slate-700">{r.ngo?.organizationName || r.ngo?.ngoName || r.ngo?.name}</p>
+                      <p className="font-medium text-slate-700 dark:text-slate-300">{r.ngo?.organizationName || r.ngo?.ngoName || r.ngo?.name}</p>
                       <p className="text-xs text-slate-400">{r.ngo?.email}</p>
                     </td>
                     <td>
-                      <p className="text-slate-700">{r.donation?.foodType}</p>
+                      <p className="text-slate-700 dark:text-slate-300">{r.donation?.foodType}</p>
                       <p className="text-xs text-slate-400">{r.donation?.quantity}</p>
                     </td>
                     <td className="text-slate-500">{r.donation?.donor?.name || '—'}</td>

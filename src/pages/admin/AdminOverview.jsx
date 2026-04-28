@@ -76,11 +76,11 @@ export default function AdminOverview() {
             { icon: '👥', label: 'Manage Users',  sub: 'View, activate or deactivate users',       path: '/admin/users' },
           ].map((a) => (
             <button key={a.path} onClick={() => navigate(a.path)}
-              className="flex items-center gap-3 px-5 py-4 hover:bg-slate-50 transition-colors text-left w-full">
+              className="flex items-center gap-3 px-5 py-4  hover:bg-slate-300 dark:hover:bg-slate-700 transition-colors text-left w-full">
               <span className="text-2xl">{a.icon}</span>
               <div>
-                <p className="font-semibold text-slate-800 text-sm">{a.label}</p>
-                <p className="text-xs text-slate-400 mt-0.5">{a.sub}</p>
+                <p className="font-semibold text-slate-800 dark:text-slate-100 text-sm">{a.label}</p>
+                <p className="text-xs text-slate-600 dark:text-slate-400 mt-0.5">{a.sub}</p>
               </div>
             </button>
           ))}
@@ -95,13 +95,13 @@ export default function AdminOverview() {
             <button onClick={() => navigate('/admin/donations')} className="text-sm text-brand-600 hover:text-brand-700 font-semibold">View all →</button>
           </div>
           {recentDonations.length === 0
-            ? <p className="text-slate-400 text-sm text-center py-10">No donations yet</p>
+            ? <p className="text-slate-600 dark:text-slate-400 text-sm text-center py-10">No donations yet</p>
             : <ul className="divide-y divide-slate-100">
                 {recentDonations.map((d) => (
-                  <li key={d._id} className="flex items-center justify-between px-5 py-3 hover:bg-slate-50 transition-colors">
+                  <li key={d._id} className="flex items-center justify-between px-5 py-3  hover:bg-slate-300 dark:hover:bg-slate-700 transition-colors">
                     <div>
-                      <p className="text-sm font-medium text-slate-700">{d.foodType} — {d.quantity}</p>
-                      <p className="text-xs text-slate-400 mt-0.5">{d.donor?.name} · {formatDateTime(d.createdAt)}</p>
+                      <p className="text-sm font-medium text-slate-700 dark:text-slate-100">{d.foodType} — {d.quantity}</p>
+                      <p className="text-xs text-slate-600 dark:text-slate-400 mt-0.5">{d.donor?.name} · {formatDateTime(d.createdAt)}</p>
                     </div>
                     <StatusBadge status={d.status} />
                   </li>
@@ -116,13 +116,13 @@ export default function AdminOverview() {
             <button onClick={() => navigate('/admin/requests')} className="text-sm text-brand-600 hover:text-brand-700 font-semibold">View all →</button>
           </div>
           {recentRequests.length === 0
-            ? <p className="text-slate-400 text-sm text-center py-10">No requests yet</p>
+            ? <p className="text-slate-600 dark:text-slate-400 text-sm text-center py-10">No requests yet</p>
             : <ul className="divide-y divide-slate-100">
                 {recentRequests.map((r) => (
-                  <li key={r._id} className="flex items-center justify-between px-5 py-3 hover:bg-slate-50 transition-colors">
+                  <li key={r._id} className="flex items-center justify-between px-5 py-3 hover:bg-slate-300 dark:hover:bg-slate-700 transition-colors">
                     <div>
-                      <p className="text-sm font-medium text-slate-700">{r.ngo?.organizationName || r.ngo?.ngoName || r.ngo?.name}</p>
-                      <p className="text-xs text-slate-400 mt-0.5">{r.donation?.foodType} · {formatDateTime(r.createdAt)}</p>
+                      <p className="text-sm font-medium text-slate-700 dark:text-slate-100">{r.ngo?.organizationName || r.ngo?.ngoName || r.ngo?.name}</p>
+                      <p className="text-xs text-slate-600 dark:text-slate-400 mt-0.5">{r.donation?.foodType} · {formatDateTime(r.createdAt)}</p>
                     </div>
                     <StatusBadge status={r.status} />
                   </li>

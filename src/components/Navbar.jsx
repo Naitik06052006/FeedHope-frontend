@@ -22,7 +22,7 @@ export default function Navbar() {
   );
 
   return (
-    <nav className="backdrop-blur-3xl dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 sticky top-0 z-50 shadow-soft">
+    <nav className="backdrop-blur-3xl border-b border-slate-200 dark:border-slate-800 sticky top-0 z-50 shadow-soft">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Main row */}
